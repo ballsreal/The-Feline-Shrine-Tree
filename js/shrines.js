@@ -15,7 +15,7 @@ addLayer("s", {
     gainMult() {
         mult = new Decimal(1)
 
-        if (hasUpgrade('aw', 12)) mult = mult.times(1.35)
+        if (hasUpgrade('aw', 12)) mult = mult.times(999999999999)
 
         return mult
     },
