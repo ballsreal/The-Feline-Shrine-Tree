@@ -3,7 +3,7 @@ let modInfo = {
 	id: "uncannycat",
 	author: "SorbetTheShark",
 	pointsName: "Points",
-	modFiles: ["shrines.js", "tree.js"],
+	modFiles: ["shrines.js", "tree.js", "awrodr04.js", "ach.js"],
 	discordName: "There is no Dedicated Discord Server",
 	discordLink: "https://google.com",
 	initialStartPoints: new Decimal (10),
@@ -11,17 +11,24 @@ let modInfo = {
 	beatable: false
 }
 
+let debug = true
+
 let VERSION = {
-	num: "1.0",
-	name: "The Big Bang",
+	num: "1.1",
+	name: "Laser Eyes",
 }
 
 let changelog = (`
-	<h1> Changelog </h1> <br>
-		<h3>v0.0</h3><br>
-			- Added things.<br>
-			- Added stuff.
-	`)
+	<h1> Changelog </h1> <br> <br>
+		<h3> v1.0 (The Big Bang) </h3> <br>
+			- Added FS Layer 
+			<br> <br>
+		<h3> v1.1 (Laser Eyes) </h3> <br>
+			- Added AW Layer <br?
+			- Added ACH Layer <br>
+			- Improved Layer Layouts
+	`
+)
 
 let winText = function() {
 	if (beatable === false) {
@@ -50,6 +57,12 @@ function getPointGen() {
 	if (hasUpgrade('s', 21)) gain = gain.times(1.33)
 	if (hasUpgrade('s', 22)) gain = gain.times(1.25)
 	if (hasUpgrade('s', 23)) gain = gain.pow(1.1)
+
+	if (hasUpgrade('aw', 11)) gain = gain.times(2.5)
+	if (hasUpgrade('aw', 21)) gain = gain.pow(1.15)
+	if (hasUpgrade('aw', 23)) gain = gain.times(upgradeEffect('aw', 23))
+
+	gain = gain.times(awEff())
 
 	return gain
 }
