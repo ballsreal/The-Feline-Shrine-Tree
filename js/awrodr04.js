@@ -14,7 +14,7 @@ addLayer("aw", {
         total: new Decimal(0)
     }},
     color: "cadetblue",
-    requires: new Decimal(375),
+    requires: new Decimal(325),
     resource: "Lasers",
     baseResource: "FS Points",
     baseAmount() {return player.s.points},
@@ -126,7 +126,7 @@ function awEff() {
 }
 
 function awBase() {
-    let base = new Decimal(3)
+    let base = new Decimal(2.75)
 
     if (hasUpgrade('aw', 22)) base = base.times(0.85)
 

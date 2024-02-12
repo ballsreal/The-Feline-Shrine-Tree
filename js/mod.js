@@ -14,8 +14,8 @@ let modInfo = {
 let debug = false
 
 let VERSION = {
-	num: "1.1",
-	name: "Laser Eyes",
+	num: "1.1.1",
+	name: "Balancing 01",
 }
 
 let changelog = (`
@@ -24,9 +24,13 @@ let changelog = (`
 			- Added FS Layer 
 			<br> <br>
 		<h3> v1.1 (Laser Eyes) </h3> <br>
-			- Added AW Layer <br?
+			- Added AW Layer <br>
 			- Added ACH Layer <br>
 			- Improved Layer Layouts
+			<br> <br>
+		<h3> v1.1.1 (Balancing 01) </h3> <br>
+			- Balanced FS Layer upgrades
+			- Decreased Laser cost and scaling
 	`
 )
 
@@ -52,11 +56,11 @@ function getPointGen() {
 	let gain = new Decimal(0)
 
 	if (hasUpgrade('s', 11)) gain = gain.add(1.5)
-	if (hasUpgrade('s', 12)) gain = gain.times(1.5)
+	if (hasUpgrade('s', 12)) gain = gain.times(1.65)
 	if (hasUpgrade('s', 13)) gain = gain.add(upgradeEffect('s', 13))
 	if (hasUpgrade('s', 21)) gain = gain.times(1.33)
-	if (hasUpgrade('s', 22)) gain = gain.times(1.25)
-	if (hasUpgrade('s', 23)) gain = gain.pow(1.1)
+	if (hasUpgrade('s', 22)) gain = gain.times(1.33)
+	if (hasUpgrade('s', 23)) gain = gain.pow(1.15)
 
 	if (hasUpgrade('aw', 11)) gain = gain.times(2.5)
 	if (hasUpgrade('aw', 21)) gain = gain.pow(1.15)

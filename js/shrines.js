@@ -32,7 +32,7 @@ addLayer("s", {
 
         12: {
             title: "Mindustry",
-            description: "Multiply point gain by 1.5x.",
+            description: "Multiply point gain by 1.65x.",
             cost: new Decimal(3),
             style() {return upgradeStyle()},
             unlocked() {return hasUpgrade('s', 11)}
@@ -42,7 +42,7 @@ addLayer("s", {
             title: "Event Horizon",
             description: "Additively increase point gain based on FS Points.",
             cost: new Decimal(5),
-            effect() {return player.s.points.pow(0.65)},
+            effect() {return player.s.points.pow(0.8)},
             effectDisplay() {return `+${format(this.effect(),3)}`},
             style() {return upgradeStyle()},
             tooltip: "FSP^0.8",
@@ -59,7 +59,7 @@ addLayer("s", {
 
         22: {
             title: "Itch.io",
-            description: "Multiply point gain by 1.25x.",
+            description: "Multiply point gain by 1.33x again.",
             cost: new Decimal(35),
             style() {return upgradeStyle()},
             unlocked() {return hasUpgrade('s', 21)}
@@ -67,7 +67,7 @@ addLayer("s", {
 
         23: {
             title: "Discord",
-            description: "Raise point gain to the power of 1.1.",
+            description: "Raise point gain to the power of 1.15.",
             cost: new Decimal(65),
             style() {return upgradeStyle()},
             unlocked() {return hasUpgrade('s', 22)}
