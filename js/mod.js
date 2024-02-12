@@ -11,7 +11,7 @@ let modInfo = {
 	beatable: false
 }
 
-let debug = true
+let debug = false
 
 let VERSION = {
 	num: "1.1",
