@@ -13,7 +13,7 @@ addLayer("aw", {
         best: new Decimal(0),
         total: new Decimal(0)
     }},
-    color: "cadetblue",
+    color: "navy",
     requires: new Decimal(325),
     resource: "Lasers",
     baseResource: "FS Points",
