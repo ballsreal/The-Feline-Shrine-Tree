@@ -14,8 +14,8 @@ let modInfo = {
 let debug = false
 
 let VERSION = {
-	num: "1.1.1",
-	name: "Balancing 01",
+	num: "1.1.2",
+	name: "I forgor",
 }
 
 let changelog = (`
@@ -29,8 +29,12 @@ let changelog = (`
 			- Improved Layer Layouts
 			<br> <br>
 		<h3> v1.1.1 (Balancing 01) </h3> <br>
-			- Balanced FS Layer upgrades
+			- Balanced FS Layer upgrades <br>
 			- Decreased Laser cost and scaling
+			<br> <br>
+		<h3> v1.1.2 (I forgor) </h3> <br>
+			- Properly implemented achievment effect <br>
+			- <b>Laser Eyes</b> hides itself after unlocking the AW Layer
 	`
 )
 
@@ -67,6 +71,7 @@ function getPointGen() {
 	if (hasUpgrade('aw', 23)) gain = gain.times(upgradeEffect('aw', 23))
 
 	gain = gain.times(awEff())
+	gain = gain.times(achEff())
 
 	return gain
 }

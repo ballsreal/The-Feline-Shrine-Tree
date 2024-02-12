@@ -19,8 +19,7 @@ addLayer("ach", {
             onComplete() {player.ach.points = player.ach.points.add(1)}
         }
     },
-    effect() {return player.ach.points.add(1).pow(1.2)},
-    effectDescription() {return `which multiplies point gain by ${format(this.effect())}x`},
+    effectDescription() {return `which multiplies point gain by ${format(achEff(), 2)}x`},
     microtabs: {
         index: {
             "Unlocks": {
@@ -41,3 +40,7 @@ addLayer("ach", {
         }
     }
 })
+
+function achEff() {
+    return player.ach.points.add(1).pow(1.2)
+}

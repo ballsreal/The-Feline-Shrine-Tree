@@ -78,7 +78,11 @@ addLayer("s", {
             description: "Meet Awrodr04",
             cost: new Decimal(250),
             style() {return upgradeStyle()},
-            unlocked() {return hasUpgrade('s', 23)}
+            unlocked() {
+                if (hasUpgrade('s', 23) && !hasAchievement('ach', 11)) {
+                    return true
+                }
+            }
         }
     },
     branches: ["aw"],
