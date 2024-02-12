@@ -46,7 +46,7 @@ addLayer("aw", {
         12: {
             title: "Prism",
             description: "Multiply FS Point gain by 1.35x.",
-            cost: new Decimal(2),
+            cost: new Decimal(1),
             style() {return upgradeStyle()},
             unlocked() {return hasUpgrade('aw', 11)}
         },
@@ -54,7 +54,7 @@ addLayer("aw", {
         13: {
             title: "Laser Cannon",
             description: "Multiply laser's effect base by 1.3x.",
-            cost: new Decimal(4),
+            cost: new Decimal(1),
             style() {return upgradeStyle()},
             unlocked() {return hasUpgrade('aw', 12)}
         },
@@ -62,7 +62,7 @@ addLayer("aw", {
         21: {
             title: "Piezo",
             description: "Raise point gain to the power of 1.15.",
-            cost: new Decimal(6),
+            cost: new Decimal(1),
             style() {return upgradeStyle()},
             unlocked() {return hasUpgrade('aw', 13)}
         },
@@ -70,7 +70,7 @@ addLayer("aw", {
         22: {
             title: "Gamma Ray",
             description: "Decrease laser cost scaling by 15%.",
-            cost: new Decimal(8),
+            cost: new Decimal(1),
             style() {return upgradeStyle()},
             unlocked() {return hasUpgrade('aw', 21)}
         },
@@ -78,7 +78,7 @@ addLayer("aw", {
         23: {
             title: "Supernova",
             description: "Multiply point gain based on total lasers.",
-            cost: new Decimal(11),
+            cost: new Decimal(1),
             style() {return upgradeStyle()},
             effect() {return player.aw.total.pow(1.15)},
             effectDisplay() {return `x${this.effect()}`},
@@ -119,14 +119,14 @@ addLayer("aw", {
 function awEff() {
     let base = new Decimal(1.3)
 
-    if (hasUpgrade('aw', 13)) base = base.times(1.3)
+    if (hasUpgrade('aw', 13)) base = base.times(1)
 
     return player.aw.best.add(1).pow(base)
     
 }
 
 function awBase() {
-    let base = new Decimal(2.75)
+    let base = new Decimal(1)
 
     if (hasUpgrade('aw', 22)) base = base.times(0.85)
 
